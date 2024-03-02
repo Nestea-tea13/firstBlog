@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head> 
+    <title>Блог сайта</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <header th:insert="blocks/header :: header"></header>
+
+    <div class="container mt-5 mb-5">
+        <h1>Список статей</h1> <!-- СДЕЛАТЬ ПО ЦЕНТРУ -->
+        <table class="table table-bordered table-hover">
+            <thead>
+            <th>№</th>
+            <th>Название</th>
+            <th>Анонс</th>
+            <th>Количество просмотров</th>
+            </thead>
+            <tbody>
+                <tr th:each="post, iter : ${posts}"> <!-- th:style="${iterStat.odd}? 'font-weight: bold;'" -->
+                    <td th:text="${iter.index}+1"></td>
+                    <td th:text="${post.title}"></td>
+                    <td th:text="${post.anons}"></td>
+                    <td th:text="${post.views}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div th:insert="blocks/footer :: footer"></div>
+</body>
+
+</html>

@@ -27,6 +27,13 @@ public class BlogController {
     return "blog-main";
   }
 
+  @GetMapping("/blog/table")
+  public String blogTable(Model model) {
+    Iterable<Post> posts = postRepository.findAll();
+		model.addAttribute("posts", posts);
+    return "blog-table";
+  }
+
   @GetMapping("/blog/add")
   public String blogAdd(Model model) {
     return "blog-add";
