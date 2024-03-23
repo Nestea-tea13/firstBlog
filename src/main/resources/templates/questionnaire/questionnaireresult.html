@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head> 
-    <title th:text="${title}"/>
+    <title>Ответы</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 </head>
@@ -11,8 +11,11 @@
     <header th:insert="blocks/header :: header"></header>
 
     <div class="container mt-5">
-        <h1 th:text="${title}"/>
-        <br><a href="/questionnaire" class="btn btn-dark">Пройти опрос</a><br>
+        <h1>Ваши ответы</h1>
+        <p th:text="${questionnaireResult.answer1}"/>
+        <p th:text="${questionnaireResult.answer2}"/>
+        <p th:text="${questionnaireResult.answer3}"/>
+        <p th:text="${date}"/>
     </div>
 
     <div th:insert="blocks/footer :: footer"></div>
