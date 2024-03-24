@@ -26,53 +26,15 @@
             </div>
             
             <br>
-          </div>
-
-          <!--
-          <p th:text="${questions[0]}"/>
-          <div>
-            <div class="d-inline">
-              <input type="radio" id="111" name="answer1" th:value="${answerOptions[0][0]}" required/>
-              <label for="111" th:text="${answerOptions[0][0]}"/>
-            </div>
-            
-            <div class="d-inline">
-              <input type="radio" id="222" name="answer1" th:value="${answerOptions[0][1]}"/>
-              <label for="222" th:text="${answerOptions[0][1]}"/>
-            </div>
-
-            <div class="d-inline">
-              <input type="radio" id="333" name="answer1" th:value="${answerOptions[0][2]}"/>
-              <label for="333" th:text="${answerOptions[0][2]}"/>
-            </div>
-            
-          </div>
-          <br>
-
-          <p th:text="${questions[1]}"/>
-          <div>
-            <input type="radio" id="111" name="answer2" th:value="${answerOptions[1][0]}" required/>
-            <label for="111" th:text="${answerOptions[1][0]}"/>
-
-            <input type="radio" id="222" name="answer2" th:value="${answerOptions[1][1]}"/>
-            <label for="222" th:text="${answerOptions[1][1]}"/>
-          </div>
-          <br>
-
-          <p th:text="${questions[2]}"/>
-          <div>
-            <input type="radio" id="111" name="answer3" th:value="${answerOptions[2][0]}" required/>
-            <label for="111" th:text="${answerOptions[2][0]}"/>
-
-            <input type="radio" id="222" name="answer3" th:value="${answerOptions[2][1]}"/>
-            <label for="222" th:text="${answerOptions[2][1]}"/>
-          </div>
-          <br>-->  
+          </div> 
           
           <div>
             <button type="submit" class="btn btn-dark">Сохранить</button>
           </div>
         </form>
+
+        <br>
+        <a href="/exportpdf" class="btn btn-dark">Сохранить шаблон опросника в pdf-файл</a>
     </div>
 
     <div th:insert="blocks/footer :: footer"></div>
