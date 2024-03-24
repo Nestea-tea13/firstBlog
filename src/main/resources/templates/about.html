@@ -13,9 +13,38 @@
     <div class="container mt-5">
         <h1 th:text="${title}"/>
         <br><a href="/questionnaire" class="btn btn-dark">Пройти опрос</a><br>
+        
+        <br>
+        <div class="header-info-rightbox">
+            <canvas id="lineChart"></canvas>
+        </div>
+    
     </div>
 
     <div th:insert="blocks/footer :: footer"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script> 
+    <script th:inline="javascript">
+        let ctx = document.querySelector('#lineChart').getContext('2d');
+        
+        /*<![CDATA[*/ var xLabels = /*[[ ${xlabels} ]]*/ 'label' /*]]*/;
+        /*<![CDATA[*/ var yData = /*[[ ${ydata} ]]*/ 'data' /*]]*/
+
+        let myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: xLabels,
+                datasets: [{
+                    label: 'Test line chart',
+                    data: yData,
+                    fill: false,
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }]
+            }
+        });
+    </script>
+
 </body>
 
 </html>

@@ -24,6 +24,12 @@ public class MainController {
     @GetMapping("/about")
     public String about(Model model) {
         model.addAttribute("title", "Страница про нас");
+
+        String[] xLabels  = new String[] {"2015", "2016", "2017", "2018", "2019", "2020"};
+        int[] yData  = new int[] {25, 50, 40, 60, 65, 35};
+
+        model.addAttribute("xlabels", xLabels);
+        model.addAttribute("ydata", yData);
 		return "about";
     }
 
